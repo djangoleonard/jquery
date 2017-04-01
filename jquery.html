@@ -5,9 +5,11 @@
     <title>Title</title>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script>
-        $(function() {
+        $(function () {
             $("#demo").append("David");
             $("#demo").prepend("Leonard");
+            $("#demo").before("<i>Some Title</i>");
+            $("#demo").after("<b>Welcome</b>");
         });
     </script>
 </head>
