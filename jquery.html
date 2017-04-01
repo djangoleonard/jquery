@@ -5,15 +5,14 @@
     <title>Title</title>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script>
-        $(function () {
-            var t = $("#user").val();
-            $("#demo").text(t);
+        $(function() {
+            $("#demo").append("David");
+            $("#demo").prepend("Leonard");
         });
     </script>
 </head>
 <body>
-<input id="user" value="Ali">
-<p id="demo">Ali Baba</p>
+<p id="demo"> Hi </p>
 
 </body>
 </html>
