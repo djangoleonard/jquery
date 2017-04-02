@@ -6,29 +6,26 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script>
         $(function() {
-            $("p").click(function() {
-                $("div").slideDown(3000);
+            $("div").click(function() {
+                $("div").animate({
+                    width: '+=250px',
+                    height: '+=250px'
+                }, 1000);
             });
         });
     </script>
     <style>
-        p {
-            background-color:grey;
-            text-align:center;
-            color:white;
-            padding:5px;
-            cursor:pointer;
-        }
         div {
+            display:inline-block;
+            padding:25px;
             background-color:grey;
             color:white;
+            text-align:center;
+            cursor:pointer;
         }
     </style>
 </head>
 <body>
-<p>Click to toggle show/hide</p>
-<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-</div>
+<div>Click me</div>
 </body>
 </html>
