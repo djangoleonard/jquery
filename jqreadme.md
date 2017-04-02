@@ -299,3 +299,26 @@ JS:
          alert($("p").eq(1).text());
     });
 
+## 4.3 - Removing Elements
+
+### Remove Elements
+
+We remove selected elements from the DOM using the remove() method. For example:
+
+HTML: 
+
+    <p style="color:red">Red</p>
+    <p style="color:green">Green</p>
+    <p style="color:blue">Blue</p>
+    
+JS:
+
+    $("p").eq(1).remove();
+
+This removes Green, the second paragraph element.
+
+You can also use the remove() method on multiple selected elements, for example $("p").remove() removes all paragraphs.
+
+> The jQuery remove() method removes the selected element(s), as well as its child elements.
+
+

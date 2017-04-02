@@ -6,7 +6,7 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script>
         $(function () {
-            alert($("p").eq(1).text());
+            $("p").eq(1).remove();
         });
     </script>
     <style>
@@ -14,6 +14,8 @@
     </style>
 </head>
 <body>
-<p>a</p><p>b</p><p>c</p>
+<p style="color:red">Red</p>
+<p style="color:green">Green</p>
+<p style="color:blue">Blue</p>
 </body>
 </html>
