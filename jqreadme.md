@@ -269,3 +269,21 @@ JS:
       var e = $("p").parents();
       e.css("border", "2px solid red");
     });
+    
+
+The code above sets a red border for all parents of the paragraph.
+
+Some of the most used traversal methods are presented below: 
+
+![traversal methods](https://api.sololearn.com/DownloadFile?id=3044)
+
+### Traversing
+
+
+The eq() method can be used to select a specific element from multiple selected elements.
+
+For example, if the page contains multiple div elements and we want to select the third one: 
+
+    $("div").eq(2);
+
+> The index numbers start at 0, so the first element will have the index number 0.
