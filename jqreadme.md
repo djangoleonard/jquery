@@ -287,3 +287,15 @@ For example, if the page contains multiple div elements and we want to select th
     $("div").eq(2);
 
 > The index numbers start at 0, so the first element will have the index number 0.
+
+
+HTML:
+
+    <p>a</p><p>b</p><p>c</p>
+
+JS:
+
+    $(function () {
+         alert($("p").eq(1).text());
+    });
+
