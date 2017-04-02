@@ -94,3 +94,34 @@ $(function() {
 ````
 
 >The code above toggles the class name "red" upon clicking the button.
+
+## 3.2 -  CSS Properties
+
+Similar to the html() method, the css() method can be used to get and set CSS property values.
+For example:
+
+HTML:
+
+```
+<p>Some text</p>
+```
+
+CSS:
+
+```
+p {
+  background-color:red;
+  color: white;
+}
+```
+
+JS:
+
+```
+$(function() {
+  alert($("p").css("background-color"));
+  $("p").css("background-color", "blue");
+}); 
+```
+
+>The code above alerts the background-color property of the paragraph and then sets it to blue.

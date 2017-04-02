@@ -6,47 +6,20 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script>
         $(function () {
-            $("div").addClass("header");
-            $("p").addClass("text menu");
-            $("div").removeClass("red");
-            $("div").removeClass("red header").addClass("menu");
-            $("p").addClass("c");
-            $("p").removeClass("a c");
-        });
-        $(function () {
-            $("button").click(function () {
-                $("p").toggleClass("red")
-            })
-        });
-        $(function() {
-            $("p").addClass("test");
-            $("p").toggleClass("test");
+            alert($("p").css("background-color"));
+            $("p").css("background-color", "blue");
+            $("p").css("font-size", "16pt");
+            $("p").css("color", "yellow");
         });
     </script>
     <style>
-        .header {
-            color: blue;
-            font-size: x-large;
+        p {
+            background-color: red;
+            color: white;
         }
-
-        .text, .menu {
-            color: red;
-            font-size: medium;
-        }
-
-        .menu {
-            color: green;
-        }
-
-        .red {
-            color: red;
-            font-weight: bold;
-        }
-        .test{ border-style: solid; }
     </style>
 </head>
 <body>
 <p>Some text</p>
-<button>Toggle Class</button>
 </body>
 </html>
