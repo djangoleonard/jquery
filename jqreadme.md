@@ -690,6 +690,13 @@ For example:
         $("div").slideToggle(500);
       });
     });
+    
+---
+    $(function() {
+        $("p").click(function() {
+            $("div").slideDown(3000);
+        });
+    });
 
 
 
