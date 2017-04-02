@@ -526,8 +526,37 @@ Handle the keydown event on the input field and alert which key was pressed.
     $("input").keydown(function(event) {
       alert(event.which);
     });
+    
+### Trigger Events
+
+We can also trigger events programmatically using the trigger() method. 
+
+For example, you can trigger a click event without the user actually clicking on an element: 
+
+    $("div").click(function() {
+       alert("Clicked!");
+    });
+    $("div").trigger("click");
 
 
+This code triggers the click event for the selected element.
+
+> The trigger() method cannot be used to mimic native browser events, such as clicking on a file input box or an anchor tag. Only events in the jQuery event system can be handled.
+
+## 5.3 - Creating a To-Do List
+
+### To-Do List
+
+Let's create a To-Do list project using the concepts we have learned.
+
+The To-Do list will be able to add new items to a list, as well as remove existing items.
+
+First, we create the HTML: 
+
+    <h1>My To-Do List</h1>
+    <input type="text" placeholder="New item" />
+    <button id="add">Add</button>
+    <ol id="mylist"></ol>
 
 
 

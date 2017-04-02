@@ -6,9 +6,10 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script>
         $(function () {
-            $("input").keydown(function(event) {
-                alert(event.which);
+            $("div").click(function () {
+                alert("Clicked!");
             });
+            $("div").trigger("click");
         });
     </script>
     <style>
@@ -16,7 +17,6 @@
     </style>
 </head>
 <body>
-<input id="leo">
-<a href="https://www.sololearn.com">Click me</a>
+<div>Clicke me</div>
 </body>
 </html>
