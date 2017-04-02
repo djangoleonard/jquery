@@ -739,6 +739,6 @@ This is done by putting += or -= in front of the value:
 
 To stop an animation before it is finished, jQuery provides the **stop()** method.
 
-
+### Animation Queue
 
 
