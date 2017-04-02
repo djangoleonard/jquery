@@ -6,26 +6,26 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script>
         $(function() {
-            $("div").click(function() {
-                $("div").animate({
-                    opacity: 0.5,
-                    height: '+=100px'
-                }, 5000);
-            });
+            var div = $("div");
+            div.animate({opacity: 1});
+            div.animate({height: '+=100px', width: '+=100px', top: '+=100px'}, 500);
+            div.animate({height: '-=100px', width: '-=100px', left: '+=100px'}, 500);
+            div.animate({height: '+=100px', width: '+=100px', top: '-=100px'}, 500);
+            div.animate({height: '-=100px', width: '-=100px', left: '-=100px'}, 500);
+            div.animate({opacity: 0.5});
         });
     </script>
     <style>
         div {
-            display:inline-block;
-            padding:25px;
-            background-color:grey;
-            color:white;
-            text-align:center;
-            cursor:pointer;
+            background:orange;
+            height:80px;width:80px;
+            position:absolute;
+            border-radius: 50%;
+            opacity: 0.5;
         }
     </style>
 </head>
 <body>
-<div>Click me</div>
+<div></div>
 </body>
 </html>

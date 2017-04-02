@@ -741,4 +741,30 @@ To stop an animation before it is finished, jQuery provides the **stop()** metho
 
 ### Animation Queue
 
+By default, jQuery comes with queue functionality for animations.
+
+This means that if you write multiple animate() calls one after another, jQuery creates an "internal" queue for these method calls. Then it runs the animate calls **one-by-one**.
+
+For example:
+
+    var div = $("div");
+    div.animate({opacity: 1});
+    div.animate({height: '+=100px', width: '+=100px', top: '+=100px'}, 500);
+    div.animate({height: '-=100px', width: '-=100px', left: '+=100px'}, 500);
+    div.animate({height: '+=100px', width: '+=100px', top: '-=100px'}, 500);
+    div.animate({height: '-=100px', width: '-=100px', left: '-=100px'}, 500);
+    div.animate({opacity: 0.5});
+
+Each **animate()** method call will run one after another.
+
+Remember, to manipulate the position of elements, you need to set the CSS position property of the element to **relative, fixed, or absolute**.
+
+> The animate() method, just like the hide/show/fade/slide methods, can take an optional **callback** function as its parameter, which is executed after the current effect is finished.
+
+
+
+
+
+
+
 
