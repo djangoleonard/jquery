@@ -646,5 +646,23 @@ For example:
         $("div").toggle();
       });
     });
+    
+The hide/show/toggle methods can take an optional argument, speed, which specifies the animation speed in **milliseconds**.
+
+For example, let's pass 1000 millisecond as the speed argument to the toggle() method: 
+
+    $(function() {
+      $("p").click(function() {
+        $("div").toggle(1000);
+      });
+    });
+
+> The hide/show/toggle methods can also take a second optional parameter callback, which is a function to be executed after the animation completes.
+
+
+
+
+
+
 
 
