@@ -5,21 +5,36 @@
     <title>Title</title>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script>
-        $(function () {
-            alert($("p").css("background-color"));
-            $("p").css("background-color", "blue");
-            $("p").css("font-size", "16pt");
-            $("p").css("color", "yellow");
+        $(function() {
+            var txt = "";
+            txt += "width: " + $("div").width() + " ";
+            txt += "height: " + $("div").height() + "<br/>";
+            txt += "innerWidth: " + $("div").innerWidth() + "  ";
+            txt += "innerHeight: " + $("div").innerHeight() + "<br/>";
+            txt += "outerWidth: " + $("div").outerWidth() + "  ";
+            txt += "outerHeight: " + $("div").outerHeight();
+
+            $("div").html(txt);
+        });
+        $(function() {
+            $("div").css("padding", "5px");
+            alert($("div").innerWidth());
         });
     </script>
     <style>
-        p {
+        div {
+            width: 300px;
+            height: 100px;
+            padding: 10px;
+            margin: 20px;
+            border: 3px solid blue;
             background-color: red;
             color: white;
         }
     </style>
 </head>
 <body>
-<p>Some text</p>
+<div></div>
+<div style="width:200px"></div>
 </body>
 </html>
