@@ -8,6 +8,8 @@
         $(function () {
             $("div").addClass("header");
             $("p").addClass("text menu");
+            $("div").removeClass("red");
+            $("div").removeClass("red header").addClass("menu");
         });
     </script>
     <style>
@@ -24,10 +26,16 @@
         .menu {
             color: green;
         }
+
+        .red {
+            color: red;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
 <div>Some text</div>
 <p>Text and Menu</p>
+<div class="header red">Some text</div>
 </body>
 </html>

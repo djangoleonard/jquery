@@ -47,3 +47,13 @@ The above code assigns the div element the class "header".
 
 >To specify multiple classes within the addClass() method, just separate them using spaces. For example, $("div").addClass("class1 class2 class3").
 
+The removeClass() method removes one or more class names from the selected elements.
+For example:
+
+```
+$("div").removeClass("red");
+```
+
+The code above removes the class "red" from the div element.
+
+>Again, multiple class names can be specified by separating them using spaces.
