@@ -6,8 +6,8 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script>
         $(function () {
-            $("#name").keydown(function() {
-                $("#msg").html($("#name").val());
+            $("input").keydown(function(event) {
+                alert(event.which);
             });
         });
     </script>
@@ -16,7 +16,7 @@
     </style>
 </head>
 <body>
-<input type="text" id="name" />
-<div id="msg"></div>
+<input id="leo">
+<a href="https://www.sololearn.com">Click me</a>
 </body>
 </html>

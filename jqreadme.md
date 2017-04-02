@@ -456,5 +456,78 @@ The code above handles the keydown event for the element with id="name" and assi
 
 > The event names are self-explanatory, so just experiment to see them in action.
 
+### Handling Events
+
+
+Another way to handle events in jQuery is by using the on() method.
+
+The on() method is used to attach an event to the selected element. For example: 
+
+    $( "p" ).on( "click", function() {
+      alert("clicked");
+    });
+
+As you can see, the event name is passed as the first argument to the on() method. The second argument is the handler function.
+
+> The on() method is useful for binding the same handler function to multiple events. You can provide multiple event names separated by spaces as the first argument. For example, you could use the same event handler for the click and dblclick events.
+
+Handle the submit event for the form element using the on() method:
+
+
+$("form").on("submit", function() {
+  // some code
+});
+
+### off()
+
+You can remove event handlers using the off() method.
+
+For example:
+
+    $("div").on("click", function() { 
+      alert('Hi there!'); 
+    }); 
+    $("div").off("click");
+
+> The argument of the off() method is the event name you want to remove the handler for.
+
+## 5.2 - The Event Object
+
+Every event handling function can receive an event object, which contains properties and methods related to the event:
+**pageX**, **pageY** the mouse position (X & Y coordinates) at the time the event occurred, relative to the top left of the page.
+**type** the type of the event (e.g. "click").
+**which** the button or key that was pressed.
+**data** any data that was passed in when the event was bound.
+**target** the DOM element that initiated the event.
+**preventDefault()** prevent the default action of the event (e.g., following a link).
+**stopPropagation()** Stop the event from bubbling up to other elements.
+
+> You can check out our JavaScript course for more information on event properties.
+
+You can check out our JavaScript course for more information on event properties.
+
+HTML: 
+
+    <a href="https://www.sololearn.com">Click me</a>
+    
+JS:
+
+    $( "a" ).click(function(event) {
+      alert(event.pageX);
+      event.preventDefault();
+    });
+
+The code above alerts the mouse position at the time of the click and prevents following the link.
+
+> As you can see, the event object is passed to the event handler function as an argument.
+
+Handle the keydown event on the input field and alert which key was pressed.
+
+    $("input").keydown(function(event) {
+      alert(event.which);
+    });
+
+
+
 
 
