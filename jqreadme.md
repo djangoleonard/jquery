@@ -600,6 +600,36 @@ Here's the complete code in action:
 
 > The remove button is not working yet. We will handle it in the next section!
 
+### To-Do List
+
+All that is left to do is handle the click event on the class="rem" button and remove the corresponding <li> element from the list.
+
+    $(".rem").on("click", function() {
+      $(this).parent().remove();
+    });
+    
+Remember, this is the current object. The code above removes the parent of the current object, which in our case is the parent of the remove button, the <li> element.
+
+The complete code: 
+
+    $(function() {
+      $("#add").on("click", function() {
+        var val = $("input").val();
+        if(val !== '') {
+         var elem = $("<li></li>").text(val);
+         $(elem).append("<button class='rem'>X</button>");
+         $("#mylist").append(elem);
+         $("input").val("");
+         $(".rem").on("click", function() {
+          $(this).parent().remove();
+         });
+        }
+      });
+    });
+    
+> The To-Do List was just a short demonstration of how to handle events and build a simple project.
+
+
 
 
 
