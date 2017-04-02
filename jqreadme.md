@@ -558,5 +558,48 @@ First, we create the HTML:
     <button id="add">Add</button>
     <ol id="mylist"></ol>
 
+> Clicking the button should add the value of the input field to our <ol> list.
+
+### To-Do List
+
+Now, having the HTML ready, we can start writing our jQuery code.
+
+First, we handle the click event for the button: 
+
+    $(function() {
+      $("#add").on("click", function() {
+        //event handler
+      });
+    });
+    
+Inside the event handler we select the value of the input field and create a new <li> element, adding it to the list:
+
+    var val = $("input").val();
+    if(val !== '') {
+      var elem = $("<li></li>").text(val);
+      $(elem).append("<button class='rem'>X</button>");
+      $("#mylist").append(elem);
+      $("input").val(""); //clear the input
+    }
+    
+The code above takes the value of the input field, assigns it to the val variable. The if statement checks that the value is not blank and then creates a new <li> element. A button for removing it is added, after which the newly created element is added to the \<ol id="mylist"\> list.
+
+Here's the complete code in action: 
+
+    $(function() {
+      $("#add").on("click", function() {
+        var val = $("input").val();
+        if(val !== '') {
+          var elem = $("<li></li>").text(val);
+          $(elem).append("<button class='rem'>X</button>");
+          $("#mylist").append(elem);
+          $("input").val("");
+        }
+      });
+    });
+
+> The remove button is not working yet. We will handle it in the next section!
+
+
 
 

@@ -5,11 +5,16 @@
     <title>Title</title>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script>
-        $(function () {
-            $("div").click(function () {
-                alert("Clicked!");
+        $(function() {
+            $("#add").on("click", function() {
+                var val = $("input").val();
+                if(val !== '') {
+                    var elem = $("<li></li>").text(val);
+                    $(elem).append("<button class='rem'>X</button>");
+                    $("#mylist").append(elem);
+                    $("input").val("");
+                }
             });
-            $("div").trigger("click");
         });
     </script>
     <style>
@@ -17,6 +22,9 @@
     </style>
 </head>
 <body>
-<div>Clicke me</div>
+<h1>My To-Do List</h1>
+<input type="text" placeholder="New item" />
+<button id="add">Add</button>
+<ol id="mylist"></ol>
 </body>
 </html>
