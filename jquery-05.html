@@ -6,22 +6,17 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script>
         $(function () {
-            $("#demo").click(function() {
-                $("body").html(Date());
+            $("#name").keydown(function() {
+                $("#msg").html($("#name").val());
             });
         });
     </script>
     <style>
-        div {
-            background-color: aqua;
-            width: 300px;
-            height: 200px;
-        }
+
     </style>
 </head>
 <body>
-<div id="demo">
-Date
-</div>
+<input type="text" id="name" />
+<div id="msg"></div>
 </body>
 </html>
