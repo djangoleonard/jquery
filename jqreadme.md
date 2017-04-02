@@ -761,6 +761,33 @@ Remember, to manipulate the position of elements, you need to set the CSS positi
 
 > The animate() method, just like the hide/show/fade/slide methods, can take an optional **callback** function as its parameter, which is executed after the current effect is finished.
 
+## 6.3 - Creating a Drop-Down Menu
+
+### Drop-Down Menu
+
+Let's create a simple drop-down menu that will open upon clicking on the menu item.
+
+HTML:
+
+    <div class="menu">
+      <div id="item">Drop-Down</div>
+      <div id="submenu">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>
+    
+JS:
+
+$("#item").click(function() {
+  $("#submenu").slideToggle(500);
+}); 
+
+The code above handles the click event of the id="item" element and opens/closes the submenu in 500 milliseconds.
+
+> Run the code to see it in action. You can also check out the CSS used for styling the items.
+
 
 
 
