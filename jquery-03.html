@@ -20,6 +20,11 @@
             $("div").css("padding", "5px");
             alert($("div").innerWidth());
         });
+        $(function () {
+            var e = $("<p></p>").text("Some text");
+            e.height(50);
+            $("#test").before(e);
+        });
     </script>
     <style>
         div {
@@ -36,5 +41,6 @@
 <body>
 <div></div>
 <div style="width:200px"></div>
+<p></p>
 </body>
 </html>
