@@ -6,16 +6,22 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script>
         $(function () {
-            $("p").eq(1).remove();
+            $("div").empty();
         });
     </script>
     <style>
-
+        div {
+            background-color: aqua;
+            width: 300px;
+            height: 200px;
+        }
     </style>
 </head>
 <body>
-<p style="color:red">Red</p>
-<p style="color:green">Green</p>
-<p style="color:blue">Blue</p>
+<div>
+    <p style="color:red">Red</p>
+    <p style="color:green">Green</p>
+    <p style="color:blue">Blue</p>
+</div>
 </body>
 </html>

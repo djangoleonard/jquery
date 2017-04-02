@@ -321,4 +321,51 @@ You can also use the remove() method on multiple selected elements, for example 
 
 > The jQuery remove() method removes the selected element(s), as well as its child elements.
 
+### Removing Content
 
+The empty() method is used to remove the child elements of the selected element(s). For example:
+
+HTML:
+ 
+    <div>
+       <p style="color:red">Red</p>
+       <p style="color:green">Green</p>
+       <p style="color:blue">Blue</p>
+    </div>
+
+CSS:
+
+    div {
+      background-color: aqua;
+      width: 300px;
+      height: 200px;
+    }
+
+JS:
+
+    $("div").empty();
+    
+> This removes all the three child elements of the div, leaving it empty.
+
+Empty the second child element of the element with id="nav"
+
+    var e = $("#nav").children();
+    e.eq(1).empty();
+    
+What is the output of this code?
+
+    <div><p>1</p></div>
+    <div>2</div>
+    <script>
+    alert($("p").parent().siblings().eq(0).text());
+    </script>
+    (2)
+
+How many siblings does the \<p\> element with the id="txt" have in the following HTML?
+
+     <div>
+     <p></p>
+     <p id="txt"></p>
+     <p></p>
+     </div> 
+     (2)
