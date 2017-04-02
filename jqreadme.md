@@ -182,3 +182,90 @@ JS:
     });
     
 > Run the code to see the values returned by the dimension methods.
+
+# 4 - Manipulate DOM
+## 4.1 - The DOM
+
+When you open any webpage in a browser, the HTML of the page is loaded and rendered visually on the screen.
+
+To accomplish this, the browser builds the Document Object Model (DOM) of that page, which is an object oriented model of its logical structure.
+
+The DOM of an HTML document can be represented as a nested set of boxes: 
+
+![the dom](https://api.sololearn.com/DownloadFile?id=3042)
+
+The DOM represents a document as a tree structure where HTML elements are interrelated nodes in the tree.
+
+Nodes can have child nodes. Nodes on the same tree level are called siblings.
+
+jQuery traversing is the term used to describe the process of moving through the DOM and finding (selecting) HTML elements based on their relation to other elements.
+
+> jQuery makes it easy to traverse the DOM and work with HTML elements.
+
+## DOM Traversal
+
+For example, consider the HTML represented by the following structure: 
+
+![dom traversal](https://api.sololearn.com/DownloadFile?id=3085)
+
+The \<html\> element is the parent of <body> and an ancestor of everything below it.
+
+The \<body\> element is the parent of the \<h1\> and \<a\> elements.
+
+The \<h1\> and \<a\> elements are child elements of the \<body\> element and descendants of \<html\>.
+
+The \<h1\> and \<a\> elements are siblings (they share the same parent)
+
+### Summary
+
+An ancestor is a parent, grandparent, great-grandparent, and so on.
+A descendant is a child, grandchild, great-grandchild, and so on.
+Siblings share the same parent.
+
+> Understanding the relationship between the DOM elements is important to be able to traverse the DOM correctly.
+
+## DOM Traversal
+
+Query has many useful methods for DOM traversal.
+
+The parent() method returns the direct parent element of the selected element. For example:
+
+HTML:
+ 
+    <div> div element
+      <p>paragraph</p> 
+    </div>
+
+JS:
+
+    var e = $("p").parent();
+    e.css("border", "2px solid red");
+
+The code above selects the parent element of the paragraph and sets a red border for it.
+
+> Run the code to see it in action.
+
+### Traversing
+
+The parent() method can only traverse a single level up the DOM tree.
+
+To get all ancestors of the selected element you can use the parents() method. For example:
+
+HTML: 
+
+    <body>  body
+      <div style="width:300px;"> div
+        <ul> ul
+          <li> li
+            <p>paragraph</p>
+          </li>
+        </ul>   
+      </div>
+    </body>
+
+JS:
+
+    $(function() {
+      var e = $("p").parents();
+      e.css("border", "2px solid red");
+    });
