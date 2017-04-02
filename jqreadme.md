@@ -659,7 +659,23 @@ For example, let's pass 1000 millisecond as the speed argument to the toggle() m
 
 > The hide/show/toggle methods can also take a second optional parameter callback, which is a function to be executed after the animation completes.
 
+### Fade In/Out
 
+Similar to the hide/show methods, jQuery provides the **fadeIn/fadeOut** methods, which fade an element in and out of visibility.
+
+Just like the **toggle()** method switches between hiding and showing, the fadeToggle() method fades in and out.
+
+Let's see **fadeToggle()** in action:
+ 
+     $(function() {
+       $("p").click(function() {
+         $("div").fadeToggle(1000);
+       });
+     });
+
+Just like **toggle()**, **fadeToggle()** takes two optional parameters: speed and callback.
+
+> Another method used for fading is fadeTo(), which allows fading to a given opacity (value between 0 and 1). For example: $("div").fadeTo(1500, 0.7);
 
 
 
