@@ -677,7 +677,19 @@ Just like **toggle()**, **fadeToggle()** takes two optional parameters: speed an
 
 > Another method used for fading is fadeTo(), which allows fading to a given opacity (value between 0 and 1). For example: $("div").fadeTo(1500, 0.7);
 
+### Slide Up/Down
 
+The **slideUp()** and **slideDown()** methods are used to create a sliding effect on elements.
+
+Again, similar to the previous toggle methods, the **slideToggle()** method switches between the sliding effects and can take two optional parameters: speed and callback.
+
+For example:
+
+    $(function() {
+      $("p").click(function() {
+        $("div").slideToggle(500);
+      });
+    });
 
 
 
