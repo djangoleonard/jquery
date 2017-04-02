@@ -7,7 +7,8 @@
     <script>
         $(function() {
             $("div").click(function() {
-                $("div").text($("div").text()+1);
+                $("div").append("a");
+                $("div").off("click");
             });
         });
     </script>
@@ -16,6 +17,6 @@
     </style>
 </head>
 <body>
-<div>1</div>
+<div>a</div>
 </body>
 </html>

@@ -629,7 +629,22 @@ The complete code:
     
 > The To-Do List was just a short demonstration of how to handle events and build a simple project.
 
+# 6 -  Effect
 
+## 6.1 - Hide/Show, Fade, Slide
 
+### Show/Hide
+
+jQuery has some easy-to-implement effects to create animations.
+The **hide()** and **show()** methods are used to hide and show the selected elements.
+The **toggle()** method is used to toggle between hiding and showing elements.
+
+For example: 
+
+    $(function() {
+      $("p").click(function() {
+        $("div").toggle();
+      });
+    });
 
 
