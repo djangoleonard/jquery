@@ -7,16 +7,27 @@
     <script>
         $(function () {
             $("div").addClass("header");
+            $("p").addClass("text menu");
         });
     </script>
     <style>
         .header {
             color: blue;
-            font-size:x-large;
+            font-size: x-large;
+        }
+
+        .text, .menu {
+            color: red;
+            font-size: medium;
+        }
+
+        .menu {
+            color: green;
         }
     </style>
 </head>
 <body>
 <div>Some text</div>
+<p>Text and Menu</p>
 </body>
 </html>
