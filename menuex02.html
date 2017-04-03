@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $('.section').click( function() {
+                $(this).find('ul').slideToggle();
+            }).children().click( function() {
+                return false;
+            });
+        });
+    </script>
+    <style>
+        .sub-menu {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="menu">
+    <ul class="main-menu">
+        <li class="section">
+            Section 1
+            <ul class="sub-menu" style="z-index: 3;">
+                <li>Section 1A</li>
+                <li>Section 1B</li>
+                <li>Section 1C</li>
+                <li>Back</li>
+            </ul>
+        </li>
+        <li class="section">
+            Section 2
+            <ul class="sub-menu" style="z-index: 2;">
+                <li>Section 2A</li>
+                <li>Section 2B</li>
+                <li>Section 2C</li>
+                <li>Back</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('li').on('click', function (e) {
+                $(this).children('ul').toggle();
+                $(this).siblings('li').find('ul').hide();
+                e.stopPropagation();
+            });
+        });
+    </script>
+    <style>
+        .sub-menu {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<ul class="menu">
+    <li>Item 1
+        <ul class="sub-menu">
+            <!--This works fine-->
+            <li>Item 2
+                <ul class="nested sub-menu">
+                    <!--Here is the problem-->
+                    <li>Item 3
+                        <ul class="nested sub-menu">
+                            <!--Here is the problem too-->
+                            <li>Item 4</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>Item 1
+        <ul class="sub-menu">
+            <!--This works fine-->
+            <li>Item 2
+                <ul class="nested sub-menu">
+                    <!--Here is the problem-->
+                    <li>Item 3
+                        <ul class="nested sub-menu">
+                            <!--Here is the problem too-->
+                            <li>Item 4</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>

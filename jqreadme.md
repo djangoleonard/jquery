@@ -780,9 +780,9 @@ HTML:
     
 JS:
 
-$("#item").click(function() {
-  $("#submenu").slideToggle(500);
-}); 
+    $("#item").click(function() {
+      $("#submenu").slideToggle(500);
+    }); 
 
 The code above handles the click event of the id="item" element and opens/closes the submenu in 500 milliseconds.
 
