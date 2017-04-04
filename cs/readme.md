@@ -186,9 +186,19 @@
                     $('button').remove();
                 });
             })
+            
+### Traversing from $(this)
     
+    $(document).ready(function() {
+                $('button').on('click', function() {
+                    var price = $('<p>From $399.99</p>');
+                    $(this).after(price);
+                    $(this).remove();
+                });
+            });
+    Add the price as a sibling after button
     
-
+Sayfa 98
 
 
 

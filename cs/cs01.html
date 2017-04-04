@@ -5,11 +5,11 @@
     <title>Title</title>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script>
-        $(document).ready(function () {
-            $('button').on('click', function () {
+        $(document).ready(function() {
+            $('button').on('click', function() {
                 var price = $('<p>From $399.99</p>');
-                $('.vacation').append(price);
-                $('button').remove();
+                $(this).after(price);
+                $(this).remove();
             });
         });
     </script>
