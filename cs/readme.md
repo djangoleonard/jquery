@@ -140,6 +140,57 @@
 .insertAfter(<element>)
 .insertBefore(<element>)
 
+### Passing in a function
+
+    $(document).ready(<event handler function>);
+    The ready method takes an event handler function as argument
+    
+    function() {
+    // executing the function runs the code
+    // between the braces
+    }
+    We create a function with the function keyword
+    
+    $(document).ready(function() {
+    // this function runs when the DOM is ready
+    });
+    And we pass this function as an argument to the ready method.
+    
+### Watching for Click
+    
+    $(document).ready(function() {
+    // runs when the DOM is ready
+    });
+    
+    Target all buttons
+    Watch for any clicks
+    $('button').on('click', function() {
+    // runs when any button is clicked
+    });
+    Run the code inside of this function
+    
+    runs when the DOM is ready
+    $(document).ready(function() {
+        $('button').on('click', function() {
+        // run this function on click
+        });  
+    });
+    runs when a button is clicked
+    
+### Removing from the DOM
+
+    $(document).ready(function () {
+                $('button').on('click', function () {
+                    var price = $('<p>From $399.99</p>');
+                    $('.vacation').append(price);
+                    $('button').remove();
+                });
+            })
+    
+    
+
+
+
 
 
 

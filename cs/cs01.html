@@ -5,20 +5,22 @@
     <title>Title</title>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script>
-        $(document).ready(function() {
-            var price = $('<p>From $399.99</p>');
-            $('.vacation').append(price);
-            $('button').remove();
+        $(document).ready(function () {
+            $('button').on('click', function () {
+                var price = $('<p>From $399.99</p>');
+                $('.vacation').append(price);
+                $('button').remove();
+            });
         });
     </script>
 </head>
 <body>
 <li class="vacation">
     <h2>
-Hawaiian Vacation
+        Hawaiian Vacation
     </h2>
     <button>
-       Get Prices
+        Get Prices
     </button>
 </li>
 </body>
