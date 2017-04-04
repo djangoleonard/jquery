@@ -27,6 +27,29 @@
 ### Selecting by Class Name
 
     $(".promo");
+    
+### Selecting descendants
+
+    $("#destinations li").text("bursa");
+    
+### Selecting direct children
+
+    $("#destinations > li");
+
+### Selecting multiple elements
+
+    $(".promo, #france");
+
+### CSS-like pseudo classes
+
+    $("#destinations li:first");
+    Rome
+    $("#destinations li:last");
+    Rio
+    $("#destinations li:odd");
+    Paris
+    $("#destinations li:even");
+    Rome and Rid
 
 
 
