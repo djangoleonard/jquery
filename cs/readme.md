@@ -74,8 +74,12 @@
     $("li").first();
     $("li").first().parent();
 
+### Walking the DOM up and down
 
-
+    $("#destinations").children("li");
+    All li selected
+    children(), unlike find(), only selects direct children
+    
 
 
 

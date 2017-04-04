@@ -6,10 +6,7 @@
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
-            $("li").first().text("Ankara");
-            $("li").first().next().text("Samsun");
-            $("li").first().next().prev().text("Erzurum");
-            $("li").first().parent().addClass("leo");
+            $("#destinations").children("li").text("Leonard");
         });
     </script>
 </head>
@@ -19,7 +16,11 @@
 <p>Plan your next adventure.</p>
 <ul id="destinations">
     <li>Rome</li>
-    <li>Paris</li>
+    <li>
+        <ul>
+            <li>Paris</li>
+        </ul>
+    </li>
     <li class="promo">Rio</li>
 </ul>
 </body>
