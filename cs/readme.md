@@ -20,7 +20,13 @@
         <li class="promo">Rio</li>
     </ul>
 
+### Selecting by unique ID
 
+    $("#destinations");
+
+### Selecting by Class Name
+
+    $(".promo");
 
 
 

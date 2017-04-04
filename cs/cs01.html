@@ -6,8 +6,10 @@
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
-            $("h1").text("Where to?");
-            $("li").text("Orlando");
+//            $("h1").text("Where to?");
+//            $("li").text("Orlando");
+            $("#destinations").addClass("leo");
+            $(".promo").text("Bursa");
         });
     </script>
 </head>
@@ -15,7 +17,7 @@
 <h1>Where you want to go?</h1>
 <h2>Travel Destinations</h2>
 <p>Plan your next adventure.</p>
-<ul>
+<ul id="destinations">
     <li>Rome</li>
     <li>Paris</li>
     <li class="promo">Rio</li>
