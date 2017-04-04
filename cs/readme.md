@@ -123,6 +123,23 @@
     
 ### Appending to the DOM
 
+    $(document).ready(function() {
+                var price = $('<p>From $399.99</p>');
+                $('.vacation').append(price);
+                $('button').remove();
+            });
+    
+    Appends in the same place
+    
+    $('.vacation').append(price);
+    is the same
+    price.appendTo($('.vacation'));
+
+.appendTo(<element>)
+.prependTo(<element>)
+.insertAfter(<element>)
+.insertBefore(<element>)
+
 
 
 
