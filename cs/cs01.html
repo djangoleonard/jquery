@@ -6,11 +6,13 @@
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
-            $("#destinations li").text("Bursa");
-            $("#destinations li:first").text("Gaziantep");
-            $("#destinations li:last").text("Diyarbakır");
-            $("#destinations li:odd").text("Ankara");
-            $("#destinations li:even").text("İstanbul");
+//            $("#destinations li").text("Bursa");
+//            $("#destinations li:first").text("Gaziantep");
+//            $("#destinations li:last").text("Diyarbakır");
+//            $("#destinations li:odd").text("Ankara");
+//            $("#destinations li:even").text("İstanbul");
+            $("#destinations").find("li").text("Bursa");
+            $("li").first().text("İstanbul");
 
         });
     </script>

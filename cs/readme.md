@@ -50,6 +50,24 @@
     Paris
     $("#destinations li:even");
     Rome and Rid
+    
+### Filtering by traversing
+
+    Wrong
+    $("#destinations li");
+    Correct
+    $("#destinations").find("li");
+    Wrong
+    $("li:first");
+    Correct
+    $("li").first();
+    Wrong
+    $("li:last");
+    Correct
+    $("li").last();
+    
+    
+    
 
 
 
