@@ -6,22 +6,20 @@
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
-            $("#destinations").children("li").text("Leonard");
+            var price = $('<p>From $399.99</p>');
+            $('.vacation').append(price);
+            $('button').remove();
         });
     </script>
 </head>
 <body>
-<h1>Where you want to go?</h1>
-<h2>Travel Destinations</h2>
-<p>Plan your next adventure.</p>
-<ul id="destinations">
-    <li>Rome</li>
-    <li>
-        <ul>
-            <li>Paris</li>
-        </ul>
-    </li>
-    <li class="promo">Rio</li>
-</ul>
+<li class="vacation">
+    <h2>
+Hawaiian Vacation
+    </h2>
+    <button>
+       Get Prices
+    </button>
+</li>
 </body>
 </html>

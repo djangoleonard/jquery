@@ -80,9 +80,48 @@
     All li selected
     children(), unlike find(), only selects direct children
     
+### Appending to the DOM
+    
+    Wrong
+    var price = "From $399.99";
+    Wrong
+    var price = "<p>From $399.99</p>";
+    Correct
+    var price = $('<p>From $399.99</p>');
+    
+.append(<element>)
+.prepend(<element>)
+.after(<element>)
+.before(<element>)
 
+    $(document).ready(function () {
+                var price = $('<p>From $399.99</p>');
+                $('.vacation').before(price);
+            });
+    
+    $('.vacation').before(price);
+    Puts the price node before .vacation   
+         
+    $('.vacation').after(price);
+    Puts the price node after .vacation
+    
+    $('.vacation').prepend(price);
+    Adds the node to the top of .vacation
+    
+    $('.vacation').append(price);
+    Puts the price node at the bottom of .vacation
 
+### Removing from the DOM
 
+    $(document).ready(function () {
+                var price = $('<p>From $399.99</p>');
+                $('.vacation').append(price);
+                $('button').remove();
+            });
+            
+    Removes the <button> from the DOM
+    
+### Appending to the DOM
 
 
 
