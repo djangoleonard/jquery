@@ -66,9 +66,13 @@
     Correct
     $("li").last();
     
+ ### Walking the DOM   
     
-    
-
+    $("li").first();
+    $("li").first().next();
+    $("li").first().next().prev();
+    $("li").first();
+    $("li").first().parent();
 
 
 
