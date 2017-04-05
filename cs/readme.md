@@ -248,4 +248,56 @@ jQuery Object Methods
                 });
             })
     We’ll only query the DOM once for this element
+
+### On With a Selector
+    $(document).ready(function() {
+    $('button').on('click', function() {
+    ...
+    });
+    });
+    If we add new buttons anywhere, they will trigger this click handler
     
+    
+    $('.vacation button').on('click', function() {});
+    Correct
+    $('.vacation').on('click', 'button', function() {});
+    Only target a ‘button’ if it’s inside a ‘.vacation’
+
+### Filtering for Vacations On sale
+
+    $('#filters').on('click', '.onsale-filter',
+    function() {
+    $('.vacation').filter('.onsale')
+    // add a class to these vacations
+    });
+
+Class Manipulation
+.removeClass(<class>)
+.addClass(<class>)
+
+    $('.vacation').filter('.onsale').addClass('highlighted');
+---
+    $('#filters').on('click', '.onsale-filter', function() {
+            $('.vacation').filter('.onsale').addClass('highlighted');
+        });
+---
+    $('#filters').on('click', '.expiring-filter', function() {
+            $('.vacation').filter('.expiring').addClass('highlighted');
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
