@@ -372,12 +372,84 @@ mouseenter
         $('.confirmation').on('mouseenter', 'h3', showTicket);
     });
     Don’t add () at the end - that would execute the function immediately
-    
-    
+
+
+### Keyboard Events
+
+keypress
+
+keydown
+
+keyup
+
+### Form Events
+
+blur
+
+focus
+
+select
+
+submit
+
+change
                 
+    $(document).ready(function() {
+                $('.vacation').on('keyup', '.quantity', function() {
+                });
+            });
 
+### Writing our Event Handler
+    $(document).ready(function() {
+        $('.vacation').on('keyup', '.quantity', function() {
+            // Get the price for this vacation
+            // Get the quantity entered
+            // Set the total to price * quantity 
+        });
+    });
+    
+---
+    var price = $(this).closest('.vacation').data('price');
+    '399.99'
+    Returns price as a string
+---
+    var price = +$(this).closest('.vacation').data('price');
+    399.99
+    Use + to convert the string to a number
+---
+    var quantity = $(this).val();
+    '2'
+    Sets quantity to a string
+    var quantity = +$(this).val();
+    2
+    Sets quantity to a number
+    
+jQuery Object Methods
 
+.val(<new value>)
 
+.val()
+
+    $('#total').text(price * quantity);
+    You can pass a number or a string to the .text() method
+    
+
+#### The Completed Event Handler
+
+    $(document).ready(function() {
+                $('.vacation').on('keyup', '.quantity', function() {
+                    var price = +$(this).closest('.vacation').data('price');
+                    var quantity = +$(this).val();
+                    $('#total').text(price * quantity);
+                });
+            });
+            
+     Whenever the quantity is changed, the total will be updated
+     
+     
+
+    
+    
 
 
 

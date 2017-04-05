@@ -5,29 +5,25 @@
     <title>Title</title>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script>
-        function showTicket () {
-            $(this).closest('.confirmation').find('.ticket').slideDown();
-        }
         $(document).ready(function() {
-            $('.confirmation').on('click', 'button', showTicket);
-            $('.confirmation').on('mouseenter', 'h3', showTicket);
+            $('.vacation').on('keyup', '.quantity', function() {
+                var price = +$(this).closest('.vacation').data('price');
+                var quantity = +$(this).val();
+                $('#total').text(price * quantity);
+            });
         });
     </script>
-    <style>
-        .ticket {
-            display: none;
-        }
-    </style>
+
 </head>
 <body>
-<li class="confirmation" data-price='399.99'>
+<li class="vacation" data-price='399.99'>
     <h3>Hawaiian Vacation</h3>
-    <button>FLIGHT DETAILS</button>
-    <ul class="ticket">$399.99</ul>
-    <ul class='comments'>
-        <li>Amazing deal!</li>
-        <li>Want to go!</li>
-    </ul>
+    <p>$399.99 per ticket</p>
+    <p>
+        Tickets:
+        <input type='number' class='quantity' value='1' />
+    </p>
 </li>
+<p>Total Price: $<span id='total'>399.99</span></p>
 </body>
 </html>
