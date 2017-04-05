@@ -446,10 +446,45 @@ jQuery Object Methods
             
      Whenever the quantity is changed, the total will be updated
      
-     
-
+### Link Layover     
+### How the Browser Handles the Click
+### The Event Object
+    $(document).ready(function () {
+                $('.vacation').on('click', '.expand',
+                    function (event) {
+                        $(this).closest('.vacation')
+                            .find('.comments')
+                            .fadeToggle();
+                    });
+            });
+    Add the event parameter
+### event.stopPropagation()
+    $(document).ready(function () {
+                $('.vacation').on('click', '.expand',
+                    function (event) {
+                        event.stopPropagation();
+                        $(this).closest('.vacation')
+                            .find('.comments')
+                            .fadeToggle();
+                    });
+            });
     
-    
+    The browser will still handle the click event but will prevent it
+    from “bubbling up” to each parent node.
+### event.preventDefault()
+    $(document).ready(function () {
+                $('.vacation').on('click', '.expand',
+                    function (event) {
+                        event.preventDefault();
+                        $(this).closest('.vacation')
+                            .find('.comments')
+                            .fadeToggle();
+                    });
+            });
+            
+    The click event will “bubble up” but the browser won’t handle it
+            
+            
 
 
 

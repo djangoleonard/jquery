@@ -5,25 +5,28 @@
     <title>Title</title>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('.vacation').on('keyup', '.quantity', function() {
-                var price = +$(this).closest('.vacation').data('price');
-                var quantity = +$(this).val();
-                $('#total').text(price * quantity);
-            });
+        $(document).ready(function () {
+            $('.vacation').on('click', '.expand',
+                function (event) {
+                    event.preventDefault();
+                    $(this).closest('.vacation')
+                        .find('.comments')
+                        .fadeToggle();
+                });
         });
     </script>
 
 </head>
 <body>
-<li class="vacation" data-price='399.99'>
-    <h3>Hawaiian Vacation</h3>
-    <p>$399.99 per ticket</p>
-    <p>
-        Tickets:
-        <input type='number' class='quantity' value='1' />
-    </p>
-</li>
-<p>Total Price: $<span id='total'>399.99</span></p>
+<ul>
+    <li class="vacation" data-price='399.99'>
+        <a href='#' class='expand'>Show Comments</a>
+        <ul class="comments">
+            <li>Comment 1</li>
+            <li>Comment 2</li>
+        </ul>
+    </li>
+</ul>
+
 </body>
 </html>
