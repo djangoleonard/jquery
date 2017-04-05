@@ -286,6 +286,35 @@ Class Manipulation
         });
 
 
+### On DOM Load
+
+### Using slideDown to Show Elements
+
+    $(document).ready(function () {
+                $('.confirmation').on('click', 'button', function() {
+                    $(this).closest('.confirmation').find('.ticket').slideDown();
+                });
+            });
+            
+    Searches up through ancestors
+    Searches down through children
+    
+jQuery Object Methods
+.slideDown()
+.slideUp()
+.slideToggle()
+
+### Alert and Length
+
+alert('Hello');
+
+$('li').length;
+
+-->3
+
+To query how many nodes are on a page.
+
+
 
 
 

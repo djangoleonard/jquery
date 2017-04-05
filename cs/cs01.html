@@ -6,24 +6,28 @@
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('button').on('click', function () {
-                var vacation = $(this).closest('.vacation');
-                var amount = vacation.data('price');
-                var price = $('<p>From $'+amount+'</p>');
-                vacation.append(price);
-                $(this).remove();
+            $('.confirmation').on('click', 'button', function() {
+                $(this).closest('.confirmation').find('.ticket').slideDown();
             });
+            alert($('button').length);
+            alert($('li').length);
         });
     </script>
+    <style>
+        .ticket {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-<li class="vacation onsale" data-price='399.99'>
-<h3>Hawaiian Vacation</h3>
-<button>Get Price</button>
-<ul class='comments'>
-    <li>Amazing deal!</li>
-    <li>Want to go!</li>
-</ul>
+<li class="confirmation" data-price='399.99'>
+    <h3>Hawaiian Vacation</h3>
+    <button>FLIGHT DETAILS</button>
+    <ul class="ticket">$399.99</ul>
+    <ul class='comments'>
+        <li>Amazing deal!</li>
+        <li>Want to go!</li>
+    </ul>
 </li>
 </body>
 </html>
