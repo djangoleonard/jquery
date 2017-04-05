@@ -349,6 +349,33 @@ mouseenter
             
 ### Refactoring Handler Functions
 
+    $(document).ready(function() {
+                    $('.confirmation').on('click', 'button', function() {
+                        $(this).closest('.confirmation').find('.ticket').slideDown();
+                    });
+                });
+                $('.confirmation').on('mouseenter', 'h3', function() {
+                    $(this).closest('.confirmation').find('.ticket').slideDown();
+                });
+     This code is duplicated, how can we refactor this?
+---
+    function showTicket () {
+        $(this).closest('.confirmation').find('.ticket').slideDown();
+    }
+    
+    
+    function showTicket () {
+        $(this).closest('.confirmation').find('.ticket').slideDown();
+    }
+    $(document).ready(function() {
+        $('.confirmation').on('click', 'button', showTicket);
+        $('.confirmation').on('mouseenter', 'h3', showTicket);
+    });
+    Don’t add () at the end - that would execute the function immediately
+    
+    
+                
+
 
 
 
