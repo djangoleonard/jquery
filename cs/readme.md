@@ -210,14 +210,42 @@
 
     Adds the <p> node at the bottom of .vacation
 
+### Traversing and Filtering
 
+    <li class="vacation onsale" data-price='399.99'>
+    <h3>Hawaiian Vacation</h3>
+    <button>Get Price</button>
+    <ul class='comments'>
+        <li>Amazing deal!</li>
+        <li>Want to go!</li>
+    </ul>
+    </li>
+    All data attributes begin with ‘data-’
+    
+jQuery Object Methods
+.data(<name>)
+.data(<name>, <value>)
 
+    $('.vacation').first().data('price');
+    All data attributes begin with ‘data-’
+    "399.99"
 
+### Refactoring ‘Get Price’
 
+    var amount = $(this).closest('.vacation').data('price');
+    var price = $('<p>From $'+amount+'</p>');
+    Joins two strings to create the price
 
+### Reusing jQuery Objects
 
-
-
-
-
-
+    $(document).ready(function () {
+                $('button').on('click', function () {
+                    var vacation = $(this).closest('.vacation');
+                    var amount = vacation.data('price');
+                    var price = $('<p>From $'+amount+'</p>');
+                    vacation.append(price);
+                    $(this).remove();
+                });
+            })
+    We’ll only query the DOM once for this element
+    
