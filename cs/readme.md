@@ -314,8 +314,40 @@ $('li').length;
 
 To query how many nodes are on a page.
 
+### Mouse Events
 
+click
 
+dblclick
+
+focusin
+
+focusout
+
+mousedown
+
+mouseup
+
+mousemove
+
+mouseout
+
+mouseover
+
+mouseleave
+
+mouseenter
+
+    $(document).ready(function() {
+                $('.confirmation').on('click', 'button', function() {
+                    $(this).closest('.confirmation').find('.ticket').slideDown();
+                });
+            });
+            $('.confirmation').on('mouseenter', 'h3', function() {
+                $(this).closest('.confirmation').find('.ticket').slideDown();
+            });
+            
+### Refactoring Handler Functions
 
 
 
