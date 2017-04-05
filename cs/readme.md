@@ -198,11 +198,17 @@
             });
     Add the price as a sibling after button
     
-Sayfa 98
+### Using .closest(<selector>)
 
+    $(document).ready(function() {
+                $('button').on('click', function() {
+                    var price = $('<p>From $399.99</p>');
+                    $(this).closest('.vacation').append(price);
+                    $(this).remove();
+                });
+            });
 
-
-
+    Adds the <p> node at the bottom of .vacation
 
 
 
