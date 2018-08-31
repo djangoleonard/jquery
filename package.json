@@ -1,7 +1,6 @@
 {
   "name": "jqa",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,5 +10,17 @@
   "license": "ISC",
   "dependencies": {
     "jquery": "^3.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djangoleonard/jquery.git"
+  },
+  "bugs": {
+    "url": "https://github.com/djangoleonard/jquery/issues"
+  },
+  "homepage": "https://github.com/djangoleonard/jquery#readme",
+  "description": "",
+  "devDependencies": {
+    "bootstrap": "^4.1.3"
   }
 }

@@ -3,13 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <script>
         $(function () {
             $('li').on('click', function (e) {
-                $(this).children('ul').toggle();
+                $(this).children('ul').show();
+                $(this).siblings('li').find('ul').hide();
+                e.preventDefault();
+            });
+        });
+        $(function () {
+            $('.sub0').on('click', function (e) {
+                $(this).children('.sub1').show();
                 $(this).siblings('li').find('ul').hide();
                 e.stopPropagation();
+            });
+        });
+        $(function () {
+            $('.sub1').on('click', function (e) {
+                $(this).children('.sub2').show();
+                $(this).siblings('li').find('ul').hide();
+                e.stopPropagation();
+            });
+        });
+        $('#options li').hover(
+            function() {
+                //console.log('hover over');
+                $(this).find('ul').slideDown();
+            },
+            function() {
+                //console.log('hover out');
+                $(this).find('ul').slideUp();
+            });
+        $(function () {
+            $('#show_menu').on('click', function (e) {
+                $( ".list_container" ).show(3000);
+                e.stopPropagation();
+            });
+        });
+        $(function () {
+            $('#hide_menu').on('click', function (e) {
+                $( ".list_container" ).hide(3000);
+                e.stopPropagation();
+            });
+        });
+
+        jQuery(document).ready(function($){
+
+
+            $( ".show1" ).click(function(e) {
+                e.preventDefault();
+                $(".row-hide").not(".row1").slideUp();
+                $( ".row1" ).slideToggle( "slow", function() {
+                });
+            });
+
+            $( ".show2" ).click(function(e) {
+                e.preventDefault();
+                $(".row-hide").not(".row2").slideUp();
+                $( ".row2" ).slideToggle( "slow", function() {
+                });
+            });
+
+            $( ".show3" ).click(function(e) {
+                e.preventDefault();
+                $(".row-hide").not(".row3").slideUp();
+                $( ".row3" ).slideToggle( "slow", function() {
+                });
+            });
+
+            $( ".show4" ).click(function(e) {
+                e.preventDefault();
+                $(".row-hide").not(".row4").slideUp();
+                $( ".row4" ).slideToggle( "slow", function() {
+                });
+            });
+
+        });
+        $(document).ready(function() {
+            $("#menu li a").on('click', function() {
+                var page = $(this).data('page');
+                $("#pages .page:not('.hide')").stop().fadeOut('fast', function() {
+                    $(this).addClass('hide');
+                    $('#pages .page[data-page="'+page+'"]').fadeIn('slow').removeClass('hide');
+                });
             });
         });
     </script>
@@ -17,9 +96,21 @@
         .sub-menu {
             display: none;
         }
+        .col .row-hide {
+            display: none;
+        }
+        .row-hide {
+            display: none;
+        }
+        .hide {
+            display: none;
+        }
+
     </style>
+
 </head>
 <body>
+
 <ul class="menu">
     <li>Item 1
         <ul class="sub-menu">
@@ -54,5 +145,133 @@
         </ul>
     </li>
 </ul>
+<ul class="sub0">
+    <li>Emlak
+        <ul class="sub1 sub-menu">
+            <li>Daire
+                <ul class="sub2 sub-menu">
+                    <li>Satılık</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<ul id="options">
+    <li>
+        <a class="parent" id="product_1" href="#">Product 1</a>
+        <ul class="submenu product_1">
+            <li><a href="">Option One</a></li>
+            <li><a href="">Option Two</a></li>
+            <li><a href="">Option Three</a></li>
+        </ul>
+    </li>
+    <li>
+        <a class="parent" id="product_2" href="#">Product 2</a>
+        <ul class="submenu product_2">
+            <li><a href="">Option One</a></li>
+            <li><a href="">Option Two</a></li>
+            <li><a href="">Option Three</a></li>
+        </ul>
+    </li>
+</ul>
+
+<div class="list_container" style="display:none">
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Tutorials</a></li>
+        <li><a href="#">Project</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</div>
+<input type="button" class="btn btn-primary" id="show_menu" value="Show Menu">
+<input type="button" class="btn btn-primary" id="hide_menu" value="Hide Menu">
+
+<ul>
+    <li class="show1 show">Blue Row</li>
+    <li class="show2 show">Red Row</li>
+    <li class="show3 show">Green Row</li>
+    <li class="show4 show">Yellow Row</li>
+</ul>
+<!-- The Rows -->
+<div class="row1 row-hide">Blue Content</div>
+<div class="row2 row-hide">Red Content</div>
+<div class="row3 row-hide">Green Content</div>
+<div class="row4 row-hide">Yellow Content</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <ul>
+                <li class="show1 show">Blue Row</li>
+                <li class="show2 show">Red Row</li>
+                <li class="show3 show">Green Row</li>
+                <li class="show4 show">Yellow Row</li>
+            </ul>
+        </div>
+        <div class="col">
+            <!-- The Rows -->
+            <div class="row1 row-hide">Blue Content</div>
+            <div class="row2 row-hide">Red Content</div>
+            <div class="row3 row-hide">Green Content</div>
+            <div class="row4 row-hide">Yellow Content</div>
+        </div>
+        <div class="col">
+            <ul class="row1 row-hide">Blue Content</ul>
+            <ul class="row2 row-hide">Red Content</ul>
+            <ul class="row3 row-hide">Green Content</ul>
+            <ul class="row4 row-hide">Yellow Content</ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <ul id="menu" class="menu no-bullet" >
+                <li><a data-page="information" href="#"><h3> Information </h3> </a></li>
+                <li><a data-page="portfolio" href="#"><h3> Portfolio </h3> </a></li>
+                <li><a data-page="blog" href="#"><h3> Blog </h3> </a></li>
+                <li><a data-page="contact" href="#"><h3> Contact Me </h3> </a></li>
+            </ul>
+        </div>
+        <div class="col">
+            <div id="pages">
+                <div id="information" class="page" data-page="information">
+                    <div class="row">
+                        <div class="columns large-6">
+                            <h1> About Me </h1>
+                            <p> Lorem ipsum information </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="portfolio" class="page hide" data-page="portfolio">
+                    <div class="row">
+                        <div class="columns large-6">
+                            <h1> Portfolio </h1>
+                            <p> Lorem ipsum portfolio </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="blog" class="page hide" data-page="blog">
+                    <div class="row">
+                        <div class="columns large-6">
+                            <h1> Blog </h1>
+                            <p> Lorem ipsum blog </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="contact" class="page hide" data-page="contact">
+                    <div class="row">
+                        <div class="columns large-6">
+                            <h1> Contact Me </h1>
+                            <p> Lorem ipsum contact </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
